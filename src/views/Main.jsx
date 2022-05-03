@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
 import CharacterCard from '../components/Character/CharacterCard';
 import { fetchApi } from '../services/rickapi';
 
@@ -7,7 +6,7 @@ import { fetchApi } from '../services/rickapi';
 export default function Main() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] =useState(true);
-  // const { id } = useParams();
+  
 
 useEffect (() => {
 const data = async () => {
@@ -25,11 +24,9 @@ setLoading(false);
     <>
     <div>
     <h1>Character List</h1>
-
     {characters.map((character) => (
     <CharacterCard 
-    character = {character} key = {character.id} />
-    
+     key = {character.id} character = {character}/>
     ))}
     </div>
     </>
