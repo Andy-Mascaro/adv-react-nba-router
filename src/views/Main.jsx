@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import fetchApi from '../services/rickapi';
+import CharacterCard from '../components/Character/CharacterCard';
+import { fetchApi } from '../services/rickapi';
+
 
 export default function Main() {
-  const [character, setCharacter] = useState({});
+  const [characters, setCharacters] = useState([]);
   const [loading, setLoading] =useState(true);
-  const { id } = useParams();
+  // const { id } = useParams();
 
 useEffect (() => {
 const data = async () => {
-const info = await fetchApi(id);
-  setCharacter(info);
+const info = await fetchApi();
+  setCharacters(info);
 setLoading(false);
  };
 
@@ -20,6 +22,16 @@ setLoading(false);
  if (loading) return <div className='loader'>...loading</div>;
 
   return (
-    <div>Main</div>
-  )
+    <>
+    <div>
+    <h1>Character List</h1>
+
+    {characters.map((character) => (
+    <CharacterCard 
+    character = {character} />
+    
+    ))}
+    </div>
+    </>
+  );
 }
