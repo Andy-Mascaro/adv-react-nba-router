@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import App from "./src/App"
 
 
-describe('Testing Character', () => {
+describe('Testing Link', () => {
     it('Should render Alan Rails', async () => {
         render(
             <MemoryRouter>
