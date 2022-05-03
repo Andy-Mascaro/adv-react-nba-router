@@ -28,7 +28,7 @@ setLoading(false);
 
     {characters.map((character) => (
     <CharacterCard 
-    character = {character} />
+    character = {character} key = {character.id} />
     
     ))}
     </div>
