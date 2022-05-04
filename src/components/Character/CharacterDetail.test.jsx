@@ -16,7 +16,6 @@ describe('Detail page Test', () => {
     const name = await screen.findByText('Annie');
     expect(name).toBeInTheDocument();
 
-
     screen.debug();
   });
 
