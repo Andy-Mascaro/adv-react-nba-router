@@ -21,7 +21,7 @@ export default function CharacterDetail() {
 
   return (
     <article>
-      <img alt="Image of character" src={info.image} />
+      <img alt={`Image of ${info.name}`} src={info.image} />
       <h2>{info.name}</h2>
       <h3>{info.status}</h3>
       <h4>{info.species}</h4>
